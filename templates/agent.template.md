@@ -4,11 +4,16 @@ description: >-
   One or two sentences: what the agent does and when to use it. The app reads
   this text to decide when to delegate work to the agent.
 tools:
-  # Least privilege: list every tool the agent needs and nothing else.
+  # Required. Least privilege: name every tool the agent needs and nothing else.
   # Built-in groups: read, search, edit, execute, web, agent, todo.
-  # MCP tools use server/tool. A server wildcard (server/*) includes write tools, so avoid it.
+  # MCP tools use server/tool. The validator rejects * and server/*, which include write tools.
+  # A name that doesn't resolve is dropped without a warning, so check the spelling.
+  # execute and agent can't be restricted by this list. If you add them, put the limits in the prompt.
   - read
   - search
+# Optional. Uncomment both to stop the app from handing work to this agent on its own.
+# infer: false
+# disable-model-invocation: true
 ---
 
 You are <Name>. One sentence on what you do. One sentence on what you never do.

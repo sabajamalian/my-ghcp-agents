@@ -5,7 +5,7 @@ My personal custom agents to run on GHCP for my own tasks
 
 | Agent | What it does | Needs | Status |
 |---|---|---|---|
-| [`tech-researcher`](docs/tech-researcher.md) | Answers a technical question with numbered references, after review by other model families. Read-only. | Optional sign-ins: WorkIQ, Slack, MSX, and the llm-assist project | v1 |
+| [`tech-researcher`](docs/tech-researcher.md) | Answers a technical question with numbered references, after review by other model families. Doesn't edit files, post messages or change records. | Optional sign-ins: WorkIQ, Slack, MSX, and the llm-assist project | v1 |
 
 ## Use an agent
 
@@ -13,7 +13,7 @@ My personal custom agents to run on GHCP for my own tasks
 2. Pick the agent in the agent picker in the prompt box, or type `/agent`.
 3. Ask your question.
 
-Agents load only in sessions opened on this repo.
+Agents load in sessions opened on this repo. To use one in another project, copy its file to `~/.copilot/agents/`, or run `/add-dir` on this repo's path in that session. Both load the agent as trusted configuration, so read an agent file before you do either.
 
 ## Add an agent
 
